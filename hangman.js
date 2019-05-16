@@ -36,7 +36,7 @@ class Hangman {
             if (this.guessedLetters.includes(letter) || letter === ' ') {       // checks if letter is inside guessedLetters array or is letter is a space
                 puzzle += letter
             } else {
-                puzzle += '_'
+                puzzle += '*'
             }
         })
         return puzzle
@@ -62,28 +62,3 @@ class Hangman {
     }
 
 }
-
-// My answer: also correct, just too much code
-
-// Hangman.prototype.calculateStatus = function () {
-    
-//     if (this.guessesAllowed === 0) {
-//         this.status = 'failed'
-//         console.log(this.status)
-//     }
-
-//     let wordCount = 0
-
-//     this.word.forEach((letter) => {
-//         if (this.guessedLetters.includes(letter) && this.guessesAllowed > 0) {
-//             wordCount += 1
-//         } 
-//     })
-//     if (wordCount === this.word.length) {
-//         this.status = 'finished'
-//         console.log(this.status)
-//     } else {
-//         this.status = 'playing'
-//         console.log(this.status)
-//     }
-// }
