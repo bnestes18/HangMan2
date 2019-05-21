@@ -17,8 +17,24 @@ window.addEventListener('keypress', (e) => {          // fires guess on keypress
 })
 
 const render = () => {
-    puzzleText.textContent = game1.puzzle
+    puzzleText.innerHTML = ''
     guessesText.textContent = game1.statusMessage
+
+    // game1.puzzle => "*** co**"
+    let gamePuzzleArray = game1.puzzle.split('')
+    gamePuzzleArray.forEach(letter => {
+        if (letter) {
+            const letterSpan = document.createElement('span')
+            letterSpan.textContent = letter
+            puzzleText.appendChild(letterSpan)
+            
+        }
+
+    })
+    return puzzleText
+
+    // 1. For each character in the string, add a span into #puzzle
+    // 2. The spans text should just be the letter itself
 }
 
 const startGame = async () => {
